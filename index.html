@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Product Card UI Design</title>
+
+    <!-- Vendor Script -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="imgBx">
+            <img src="/assets/pngfind.com-8-bit-mario-png-1098487.png" alt="Lamp Pixel">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h2>PDP Pixel Pals Raccoon <br>
+                    <span>Lamp Pixel Collection</span>
+                </h2>
+                <p>
+                        Collectible pixel-art renditions of your favorite iconic characters- perfect for gamers and Super Mario 3 fans,
+                        It Lights Up- use on/off switch on back of figure to make Mario look like he just stepped out of a video game,
+                        At close to 6 inches tall
+                </p>
+                <p class="product-colors">Available Colors:
+                    <span class="orange active" data-color-primary="#CD432A" data-color-sec="#E29A51" data-pic="./assets/pngfind.com-8-bit-mario-png-1098487.png"></span>
+                    <span class="green" data-color-primary="#659C4E" data-color-sec="#9BCBA7" data-pic="/assets/pngfind.com-luigi-png-528041.png"></span>
+                    <span class="orange2" data-color-primary="#A84738" data-color-sec="#F18557" data-pic="/assets/pngfind.com-8-bit-mario-png-791627.png"></span>
+                </p>
+                <h3>US$ 45,99</h3>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" target="_blank">kamblack666@gmail.com</a>
+    </footer>
+
+
+    <script>
+        // Change The Picture and Associated Element Color when Color Options Are Clicked.
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $(".active").css("border-color", $(this).attr("data-color-sec"))
+            $("body").css("background", $(this).attr("data-color-primary"));
+            $(".content h2").css("color", $(this).attr("data-color-sec"));
+            $(".content h3").css("color", $(this).attr("data-color-sec"));
+            $(".container .imgBx").css("background", $(this).attr("data-color-sec"));
+            $(".container .details button").css("background", $(this).attr("data-color-sec"));
+            $(".imgBx img").attr('src', $(this).attr("data-pic"));
+        });
+    </script>
+
+</body>
+
+</html>
